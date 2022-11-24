@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { CountComponent } from './component/count/count.component';
 import { AddCountComponent } from './component/add-count/add-count.component';
+import { CounterReducer } from './state/counter.reducer';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { AddCountComponent } from './component/add-count/add-count.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({ number: CounterReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]
