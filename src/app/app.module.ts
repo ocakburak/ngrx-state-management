@@ -4,20 +4,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { CountComponent } from './component/count/count.component';
-import { AddCountComponent } from './component/add-count/add-count.component';
-import { CounterReducer } from './state/counter.reducer';
+import { LayoutsComponent } from './component/layouts/layouts.component';
+import { NavbarComponent } from './component/layouts/navbar/navbar.component';
+import { HomeComponent } from './component/home/home.component';
+import { Reducers } from './state/reducer';
+import { ProductAddComponent } from './component/home/product-add/product-add.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CountComponent,
-    AddCountComponent
+    LayoutsComponent,
+    NavbarComponent,
+    HomeComponent,
+    ProductAddComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ number: CounterReducer }),
+    FormsModule,
+    HttpClientModule,
+    StoreModule.forRoot(Reducers.basket),
   ],
   providers: [],
   bootstrap: [AppComponent]
